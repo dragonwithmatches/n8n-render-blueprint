@@ -21,4 +21,16 @@ services:
       - key: DB_POSTGRESDB_PORT
         fromDatabase:
           name: n8n-db-forked
-          prope
+          property: port
+      - key: DB_POSTGRESDB_USER
+        fromDatabase:
+          name: n8n-db-forked
+          property: user
+      - key: DB_POSTGRESDB_PASSWORD
+        fromDatabase:
+          name: n8n-db-forked
+          property: password
+      - key: DB_POSTGRESDB_SCHEMA
+        value: public
+      - key: WEBHOOK_URL
+        value: https://n8n-automation-hub.onren
