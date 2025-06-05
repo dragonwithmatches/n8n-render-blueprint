@@ -1,10 +1,10 @@
 databases:
-  - name: n8n-db-forked
+  - name: n8n-db-v2
     plan: basic-1gb
 
 services:
   - type: web
-    name: n8n-automation-hub
+    name: n8n-automation-hub-v2
     env: docker
     region: oregon
     plan: standard
@@ -16,28 +16,28 @@ services:
         value: postgresdb
       - key: DB_POSTGRESDB_HOST
         fromDatabase:
-          name: n8n-db-forked
+          name: n8n-db-v2
           property: host
       - key: DB_POSTGRESDB_DATABASE
         fromDatabase:
-          name: n8n-db-forked
+          name: n8n-db-v2
           property: database
       - key: DB_POSTGRESDB_PORT
         fromDatabase:
-          name: n8n-db-forked
+          name: n8n-db-v2
           property: port
       - key: DB_POSTGRESDB_USER
         fromDatabase:
-          name: n8n-db-forked
+          name: n8n-db-v2
           property: user
       - key: DB_POSTGRESDB_PASSWORD
         fromDatabase:
-          name: n8n-db-forked
+          name: n8n-db-v2
           property: password
       - key: DB_POSTGRESDB_SCHEMA
         value: public
       - key: WEBHOOK_URL
-        value: https://n8n-automation-hub.onrender.com/
+        value: https://n8n-automation-hub-v2.onrender.com/
       - key: N8N_ENCRYPTION_KEY
         value: YOUR_ENCRYPTION_KEY_HERE
       - key: GENERIC_TIMEZONE
